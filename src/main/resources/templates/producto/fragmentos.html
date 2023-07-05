@@ -42,7 +42,7 @@
                             <div class="modal-body">
                                  <div class="mb-3">
                                     <label for="idCategoria">[[#{producto.categoria}]]</label>
-                                <select name="idCategoria"
+                                <select name="categoria.idCategoria"
                                         class="form-select"
                                         arial-label="Default select example">
                                     <option th:each="c : ${categorias}"
@@ -105,6 +105,7 @@
                                             <th>[[#{producto.existencias}]]</th>
                                             <th>[[#{producto.total}]]</th>
                                             <th>[[#{producto.activo}]]</th>
+                                            <th>[[#{producto.categoria}]]</th>
                                             <th></th></tr>
                                     </thead>
                                     <tbody>
@@ -115,6 +116,7 @@
                                             <td>[[${producto.existencias}]]</td>
                                             <td>[[${producto.precio*producto*existencias}]]</td>
                                             <td th:text="${producto.activo} ? 'Activa' : 'Inactiva'" />
+                                            <th>[[#{producto.categoria.descripcion}]]</th>
                                             <td><a th:href="@{/producto/eliminar/}+${producto.idProducto}"
                                                    class="btn btn-danger">
                                                     <i class="fas fa-trash"></i> [[#{accion.eliminar}]]</a>
